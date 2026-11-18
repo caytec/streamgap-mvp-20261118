@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StreamGap — Twitch Ad Break Ideas Generator</title>
+  <meta name="description" content="Generate prompts, polls, mini-games, and transitions for Twitch ad breaks, queues, loading screens, and quiet chat.">
+  <link rel="canonical" href="https://caytec.github.io/streamgap-mvp-20261118/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="StreamGap — Twitch Ad Break Ideas Generator">
+  <meta property="og:description" content="Turn stream downtime into a useful mini-segment in seconds.">
+  <meta property="og:url" content="https://caytec.github.io/streamgap-mvp-20261118/">
+  <meta property="og:site_name" content="StreamGap">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://caytec.github.io/streamgap-mvp-20261118/og.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StreamGap — Twitch Ad Break Ideas Generator">
+  <meta name="twitter:description" content="Turn stream downtime into a useful mini-segment in seconds.">
+  <meta name="twitter:image" content="https://caytec.github.io/streamgap-mvp-20261118/og.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"StreamGap",
+    "url":"https://caytec.github.io/streamgap-mvp-20261118/",
+    "applicationCategory":"EntertainmentApplication",
+    "operatingSystem":"Web",
+    "browserRequirements":"Requires JavaScript",
+    "description":"A no-signup generator for streamer downtime prompts and mini-segments.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./">Stream<span>Gap</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">NO SIGNUP · BUILT FOR LIVE CREATORS</p>
+      <h1 id="page-title">Make the gap part of the stream.</h1>
+      <p class="lede">Get a ready-to-run mini-segment for ad breaks, queues, loading screens, technical issues, or quiet chat.</p>
+    </section>
+
+    <section class="tool" aria-labelledby="tool-title">
+      <h2 id="tool-title">What are you doing during the gap?</h2>
+      <form id="generator-form">
+        <div class="form-grid">
+          <label for="game">Game or category
+            <input id="game" name="game" maxlength="80" placeholder="Fortnite, Minecraft, Just Chatting" required>
+          </label>
+
+          <label for="downtime">Downtime type
+            <select id="downtime" name="downtime">
+              <option>Ad break</option>
+              <option>Loading screen</option>
+              <option>Matchmaking queue</option>
+              <option>Technical issue</option>
+              <option>Quiet chat</option>
+              <option>Guest transition</option>
+            </select>
+          </label>
+
+          <label for="duration">Remaining time
+            <select id="duration" name="duration">
+              <option value="30">30 seconds</option>
+              <option value="60" selected>1 minute</option>
+              <option value="180">3 minutes</option>
+              <option value="300">5 minutes</option>
+              <option value="600">10 minutes</option>
+            </select>
+          </label>
+
+          <label for="tone">Channel tone
+            <select id="tone" name="tone">
+              <option>Hype</option>
+              <option>Funny</option>
+              <option>Cozy</option>
+              <option>Competitive</option>
+              <option>Reflective</option>
+            </select>
+          </label>
+        </div>
+
+        <label for="topic">Optional topic or recent event
+          <textarea id="topic" name="topic" maxlength="300" placeholder="A clutch, a weird bug, a hot take, or leave blank"></textarea>
+        </label>
+
+        <button id="generate" class="primary" type="submit">Generate my segment</button>
+        <p id="status" class="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </section>
+
+    <section id="result" class="result" aria-labelledby="result-title" tabindex="-1" hidden>
+      <div class="result-head">
+        <div>
+          <p class="eyebrow">YOUR READY-TO-RUN SEGMENT</p>
+          <h2 id="result-title">StreamGap result</h2>
+        </div>
+        <div class="actions">
+          <button id="copy-all" class="secondary" type="button" aria-label="Copy all generated content">Copy all</button>
+          <button id="download" class="secondary" type="button" aria-label="Download generated card">Download card</button>
+          <button id="share" class="secondary" type="button" aria-label="Share generated segment">Share</button>
+        </div>
+      </div>
+
+      <div id="cards" class="cards"></div>
+
+      <p class="disclaimer">StreamGap is an unofficial entertainment tool and is not affiliated with, endorsed by, or sponsored by Twitch. Review every suggestion before using it live.</p>
+
+      <div class="feedback">
+        <button id="another" class="secondary" type="button">Generate another</button>
+        <button id="not-useful" class="text-button" type="button">Not useful</button>
+      </div>
+    </section>
+
+    <section class="tool content-section" aria-labelledby="how-title">
+      <h2 id="how-title">How StreamGap works</h2>
+      <ol>
+        <li>Choose your game or category.</li>
+        <li>Select the type and length of downtime.</li>
+        <li>Get prompts, a poll, a mini-game, and a return transition.</li>
+      </ol>
+    </section>
+
+    <section class="tool content-section" aria-labelledby="ideas-title">
+      <h2 id="ideas-title">Twitch ad break ideas for quiet moments</h2>
+      <p>Use a quick poll, ask for predictions, invite a low-pressure opinion, or give chat a tiny challenge. StreamGap keeps ideas short enough to say live and flexible enough to fit ad breaks, loading screens, queues, and technical pauses.</p>
+      <p>Generated content is only a starting point. Moderate every suggestion, avoid requesting private information, and skip anything that could put someone at risk.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 StreamGap · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
