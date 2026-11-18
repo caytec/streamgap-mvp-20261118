@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caytec.github.io/streamgap-mvp-20261118/sitemap.xml
