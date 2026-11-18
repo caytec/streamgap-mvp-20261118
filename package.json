@@ -1,0 +1,12 @@
+{
+  "name": "streamgap-mvp-20261118",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stream downtime prompt generator",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
